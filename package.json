@@ -1,0 +1,44 @@
+{
+  "name": "astrosoft-ui",
+  "version": "1.0.0",
+  "description": "Innovative Astro Solutions",
+  "author": "Rajasekar",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt-ts --port 3333",
+    "build": "nuxt-ts build",
+    "start": "nuxt-ts start",
+    "generate": "nuxt-ts generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@nuxt/typescript-runtime": "^0.3.2",
+    "@nuxtjs/axios": "^5.3.6",
+    "luxon": "^1.21.3",
+    "nuxt": "^2.11.0",
+    "nuxt-buefy": "^0.3.20",
+    "nuxt-property-decorator": "^2.5.0",
+    "postcss-import": "^12.0.1",
+    "vue-better-google-places-autocomplete": "^1.1.0",
+    "vue-datetime": "^1.0.0-beta.11",
+    "weekstart": "^1.0.1",
+    "minimist": ">=1.2.3"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^0.5.1",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-config-typescript": "^1.0.0",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/google-analytics": "^2.2.3",
+    "@nuxtjs/tailwindcss": "^1.0.0",
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.1.0",
+    "eslint": "^6.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "jest": "^24.1.0",
+    "vue-jest": "^4.0.0-0"
+  }
+}
