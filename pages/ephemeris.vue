@@ -9,6 +9,7 @@
       <h1>
         Planetary Ephemeris on {{ formattedDateTime }} at {{ placeName }}
       </h1>
+      <svg id="chart" width="1200" height="800" />
       <table class="table is-bordered is-hoverable card">
         <thead>
           <tr class="bg-green-400 text-gray-900">
@@ -20,6 +21,7 @@
             </th>
           </tr>
         </thead>
+        {{ buildChart }}
         <tbody>
           <tr v-for="(eph, index) in ephData" v-bind:key="index">
             <td :class="planetStyle(eph.planet)">
@@ -42,6 +44,7 @@ import AstroInputData from '../astro/AstroInputData'
 import { formatDateTime, formatDegMinSec } from '../mixins/FormatUtils'
 import { Ephemeris } from '../astro/Ephemeris'
 import { getCurrentPageUrl } from '../mixins/AppUtils'
+import AstroChart from '../astro/AstroChart'
 import AstroInput from '@/components/AstroInput.vue'
 
 @Component({
@@ -49,6 +52,7 @@ import AstroInput from '@/components/AstroInput.vue'
     AstroInput
   }
 })
+
 export default class EphemerisVue extends Vue {
   astroInputData = new AstroInputData();
   ephData: Array<Ephemeris> = []
@@ -66,6 +70,26 @@ export default class EphemerisVue extends Vue {
 
   resetData () {
     this.ephData = []
+  }
+
+  buildChart () {
+      console.log('hello')
+    const options = {
+        title: ['Rasi', '14/04/2014 07:00AM', 'Erode, Tamil Nadu, India'],
+         showHouseNumbers: true,
+            width: 600,
+            height: 400
+    }
+    const _AstroChart: any = AstroChart
+    const astroChart = new _AstroChart('#chart')
+    astroChart.draw({
+        1: ['Su', 'Ke'],
+        3: ['Ju'],
+        6: ['Ma', 'Asc'],
+        7: ['Mo', 'Sa', 'Ra'],
+        11: ['Ve'],
+        12: ['Me']
+    }, options)
   }
 
   get titleSuffix () {
@@ -132,8 +156,8 @@ export default class EphemerisVue extends Vue {
     }
   }
 }
-</script>
 
+</script>
 <style scoped>
 
 .planet-pos {
@@ -143,4 +167,47 @@ export default class EphemerisVue extends Vue {
 h1 {
   font-family: 'KoHo', sans-serif;
 }
-</style>
+/* <![CDATA[rect.house {
+    stroke: #FFA500;
+    fill:   #FFFFFF;
+}
+
+rect.chart {
+    fill: #FFFFFF;
+}
+
+text.house {
+    font-family : "Courier New";
+    font-weight: bold;
+    font-size: 16px;
+    fill       : #0000CC;
+}
+
+text.title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size  : 16px;
+    fill       : #C80082;
+    text-anchor: middle;
+}
+
+text.retrograde {
+    fill:#00468C;
+}
+
+text.houseNumber {
+    font-family : Consolas;
+    font-size: 14px;
+    fill       : #B6B4AD;
+    font-style: italic;
+}
+
+#Asc {
+    fill:red;
+}
+
+#Mo {
+    fill:#FF00FF
+}
+        ]]>
+ */</style>

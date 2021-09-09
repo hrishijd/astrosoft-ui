@@ -16,5 +16,7 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    'indent': 'off',
+    'no-unused-vars':'off'
   }
 }

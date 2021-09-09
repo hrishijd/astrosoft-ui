@@ -12,5 +12,6 @@ export default class AstroInputData {
         this.place = new Place()
         this.timezone = new Timezone()
         this.isPlaceSet = false
+        
     }
 }
