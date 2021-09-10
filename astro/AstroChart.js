@@ -9,9 +9,6 @@
 /
  */
 /* eslint-disable */
-<template>
-    
-</template>
 import Snap from './Snap';
 export default (function () {
   let CONSTANTS; let Cell; let Dimension; let Item; let Point; let addStyleSheet; let computeCellLocation; let computeHouseNumber; let computeHouseNumberLocation; let computeHouseSize; let computeTitleLocation; let drawHouse; let drawTitle; let formatId; let getCellForHouse; let getItems; let log

@@ -35,6 +35,12 @@ export default {
     script: [
       {
         src: 'https://maps.googleapis.com/maps/api/js?key=' + process.env.GOOGLE_MAPS_API_KEY + '&libraries=geometry,places'
+      },
+      {
+        src: 'https://rawgit.com/erajasekar/astrochartjs/master/dist/astrochart.js'
+      },
+      {
+        src: 'http://cdn.jsdelivr.net/snap.svg/0.2.0/snap.svg.js'
       }
     ]
   },

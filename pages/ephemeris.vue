@@ -21,7 +21,7 @@
             </th>
           </tr>
         </thead>
-        {{ buildChart }}
+        <!-- {{ buildChart }} -->
         <tbody>
           <tr v-for="(eph, index) in ephData" v-bind:key="index">
             <td :class="planetStyle(eph.planet)">
@@ -44,7 +44,7 @@ import AstroInputData from '../astro/AstroInputData'
 import { formatDateTime, formatDegMinSec } from '../mixins/FormatUtils'
 import { Ephemeris } from '../astro/Ephemeris'
 import { getCurrentPageUrl } from '../mixins/AppUtils'
-import AstroChart from '../astro/AstroChart'
+// import AstroChart from '../astro/AstroChart'
 import AstroInput from '@/components/AstroInput.vue'
 
 @Component({
@@ -80,8 +80,8 @@ export default class EphemerisVue extends Vue {
             width: 600,
             height: 400
     }
-    const _AstroChart: any = AstroChart
-    const astroChart = new _AstroChart('#chart')
+    // const _AstroChart: any = AstroChart
+    const astroChart = new AstroChart('#chart')
     astroChart.draw({
         1: ['Su', 'Ke'],
         3: ['Ju'],
